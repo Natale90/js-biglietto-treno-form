@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+
+    <!-- link to main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>TrainTicket</title>
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="ticket_calculator">
+        <div class="km">
+          <h3>Km da percorrere:</h3>
+          <h3 id="passenger_km" ></h3>
+        </div>
+
+        <div class="età">
+          <h3>Età del passeggero:</h3>
+          <h3 id="passenger_age" ></h3>
+        </div>
+
+        <div class="ticket_cost">
+          <h3 id="ticket_cost" >Costo del ticket:</h3>
+          <h3 id="passenger_cost" ></h3>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript">
+
+      //raccolta dei dati
+      var km = prompt("Km da percorrere");
+      var età = prompt("età del passeggero");
+
+      //calcolo prerzzo pieno
+      var pricePerKm = 0.21;
+      var fullPrice = (km * pricePerKm );
+
+      //calcolo degli sconti
+      var seniorDiscount = (fullPrice * 40 / 100);
+      var minorDiscount = (fullPrice * 20 / 100);
+
+      //calcolo del costo effettivo
+      var seniorCost = ( fullPrice - seniorDiscount);
+      var minorCost = (fullPrice - minorDiscount);
+
+      if (età > 65) {
+
+        console.log(seniorCost);
+
+      } else if( età < 18){
+
+        console.log(minorCost);
+
+      } else{
+
+        console.log(fullPrice);
+      }
+
+      // console.log(km, età, fullPrice, seniorDiscount, minorDiscount, seniorCost, minorCost);
+
+      document.getElementById('passenger_km').innerHTML = km;
+      document.getElementById('passenger_age').innerHTML = età;
+      document.getElementById('passenger_cost').innerHTML=
+    </script>
+
+
+  </body>
+</html>
